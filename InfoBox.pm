@@ -68,7 +68,14 @@ sub _process {
 
 				['a', 'lang', $self->text->lang],
 			) : (),
+			defined $item->url ? (
+				['b', 'a'],
+				['a', 'href', $item->url],
+			) : (),
 			['d', $item->text->text],
+			defined $item->url ? (
+				['e', 'a'],
+			) : (),
 			['e', 'td'],
 			['e', 'tr'],
 		);
