@@ -40,36 +40,41 @@ sub _process {
 	}
 
 	$self->{'tags'}->put(
-		['b', 'div'],
+		['b', 'table'],
 		['a', 'class', $self->{'css_box'}],
 	);
 	foreach my $item (@{$infobox->items}) {
 		$self->{'tags'}->put(
-			['b', 'div'],
+			['b', 'tr'],
 		);
 		if ($item->icon_utf8) {
 			$self->{'tags'}->put(
-				['b', 'span'],
+				['b', 'td'],
 				['a', 'class', 'icon'],
 				['d', $item->icon_utf8],
-				['e', 'span'],
+				['e', 'td'],
+			);
+		# TODO icon_url
+		} else {
+			$self->{'tags'}->put(
+				['b', 'td'],
+				['e', 'td'],
 			);
 		}
-		# TODO icon_url
 		$self->{'tags'}->put(
-			['b', 'span'],
+			['b', 'td'],
 			(defined $self->{'lang'} && defined $item->text->lang
 				&& $item->text->lang ne $self->{'lang'}) ? (
 
 				['a', 'lang', $self->text->lang],
 			) : (),
 			['d', $item->text->text],
-			['e', 'span'],
-			['e', 'div'],
+			['e', 'td'],
+			['e', 'tr'],
 		);
 	}
 	$self->{'tags'}->put(
-		['e', 'div'],
+		['e', 'table'],
 	);
 
 	return;
@@ -82,6 +87,10 @@ sub _process_css {
 		['s', '.'.$self->{'css_box'}],
 		['d', 'background-color', '#32a4a8'],
 		['d', 'padding', '1em'],
+		['e'],
+
+		['s', '.'.$self->{'css_box'}.' .icon'],
+		['d', 'text-align', 'center'],
 		['e'],
 	);
 
