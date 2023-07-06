@@ -99,6 +99,10 @@ sub _process_css {
 		['s', '.'.$self->{'css_box'}.' .icon'],
 		['d', 'text-align', 'center'],
 		['e'],
+
+		['s', '.'.$self->{'css_box'}.' a'],
+		['d', 'text-decoration', 'none'],
+		['e'],
 	);
 
 	return;
