@@ -31,19 +31,35 @@ sub new {
 	return $self;
 }
 
-# Process 'Tags'.
-sub _process {
+sub _cleanup {
+	my $self = shift;
+
+	delete $self->{'_infobox'};
+
+	return;
+}
+
+sub _init {
 	my ($self, $infobox) = @_;
 
 	if (! blessed($infobox) && ! $infobox->isa('Data::InfoBox')) {
 		err 'Data object for infobox is not valid.';
 	}
 
+	$self->{'_infobox'} = $infobox;
+
+	return;
+}
+
+# Process 'Tags'.
+sub _process {
+	my $self = shift;
+
 	$self->{'tags'}->put(
 		['b', 'table'],
 		['a', 'class', $self->{'css_box'}],
 	);
-	foreach my $item (@{$infobox->items}) {
+	foreach my $item (@{$self->{'_infobox'}->items}) {
 		$self->{'tags'}->put(
 			['b', 'tr'],
 		);
