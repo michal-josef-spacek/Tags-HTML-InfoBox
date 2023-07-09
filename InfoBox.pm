@@ -42,6 +42,10 @@ sub _cleanup {
 sub _init {
 	my ($self, $infobox) = @_;
 
+	if (! defined $infobox) {
+		return;
+	}
+
 	if (! blessed($infobox) && ! $infobox->isa('Data::InfoBox')) {
 		err 'Data object for infobox is not valid.';
 	}
@@ -54,6 +58,10 @@ sub _init {
 # Process 'Tags'.
 sub _process {
 	my $self = shift;
+
+	if (! exists $self->{'_infobox'}) {
+		return;
+	}
 
 	$self->{'tags'}->put(
 		['b', 'table'],
