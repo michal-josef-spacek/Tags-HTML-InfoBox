@@ -18,5 +18,6 @@ META.yml
 README
 t/Tags-HTML-InfoBox/01-use.t
 t/Tags-HTML-InfoBox/02-version.t
+t/Tags-HTML-InfoBox/03-new.t
 xt/Tags-HTML-InfoBox/01-pod_coverage.t
 xt/Tags-HTML-InfoBox/02-pod.t
