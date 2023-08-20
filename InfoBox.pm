@@ -40,19 +40,15 @@ sub _cleanup {
 }
 
 sub _init {
-	my ($self, $infobox) = @_;
+	my ($self, @params) = @_;
 
-	if (! defined $infobox) {
-		return;
-	}
+	return $self->_set_infobox(@params);
+}
 
-	if (! blessed($infobox) && ! $infobox->isa('Data::InfoBox')) {
-		err 'Data object for infobox is not valid.';
-	}
+sub _prepare {
+	my ($self, @params) = @_;
 
-	$self->{'_infobox'} = $infobox;
-
-	return;
+	return $self->_set_infobox(@params);
 }
 
 # Process 'Tags'.
@@ -128,6 +124,22 @@ sub _process_css {
 		['d', 'text-decoration', 'none'],
 		['e'],
 	);
+
+	return;
+}
+
+sub _set_infobox {
+	my ($self, $infobox) = @_;
+
+	if (! defined $infobox) {
+		return;
+	}
+
+	if (! blessed($infobox) && ! $infobox->isa('Data::InfoBox')) {
+		err 'Data object for infobox is not valid.';
+	}
+
+	$self->{'_infobox'} = $infobox;
 
 	return;
 }
