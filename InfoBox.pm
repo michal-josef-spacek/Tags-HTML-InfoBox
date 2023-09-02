@@ -135,7 +135,7 @@ sub _set_infobox {
 		return;
 	}
 
-	if (! blessed($infobox) && ! $infobox->isa('Data::InfoBox')) {
+	if (! blessed($infobox) || ! $infobox->isa('Data::InfoBox')) {
 		err 'Data object for infobox is not valid.';
 	}
 
