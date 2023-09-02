@@ -21,5 +21,6 @@ t/Tags-HTML-InfoBox/02-version.t
 t/Tags-HTML-InfoBox/03-new.t
 t/Tags-HTML-InfoBox/04-cleanup.t
 t/Tags-HTML-InfoBox/05-init.t
+t/Tags-HTML-InfoBox/06-prepare.t
 xt/Tags-HTML-InfoBox/01-pod_coverage.t
 xt/Tags-HTML-InfoBox/02-pod.t

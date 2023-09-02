@@ -10,13 +10,13 @@ use Test::NoWarnings;
 
 # Test.
 my $obj = Tags::HTML::InfoBox->new;
-my $ret = $obj->init;
-is($ret, undef, 'Init returns undef.');
+my $ret = $obj->prepare;
+is($ret, undef, 'Prepare returns undef.');
 
 # Test.
 $obj = Tags::HTML::InfoBox->new;
 eval {
-	$obj->init('bad');
+	$obj->prepare('bad');
 };
 is($EVAL_ERROR, "Data object for infobox is not valid.\n",
 	"Data object for infobox is not valid.");
