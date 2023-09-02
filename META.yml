@@ -24,6 +24,8 @@ no_index:
 requires:
   Class::Utils: 0.02
   Error::Pure: 0.07
+  Scalar::Util: 0
+  Tags::HTML: 0.08
   perl: 5.8.0
 resources:
   bugtracker: https://github.com/michal-josef-spacek/Tags-HTML-InfoBox/issues
