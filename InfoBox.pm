@@ -19,10 +19,10 @@ sub new {
 		['css_box', 'lang'], @params);
 	my $self = $class->SUPER::new(@{$other_params_ar});
 
-	$self->{'lang'} = undef;
-
 	# CSS style for info box.
 	$self->{'css_box'} = 'info-box';
+
+	$self->{'lang'} = undef;
 
 	# Process params.
 	set_params($self, @{$object_params_ar});
