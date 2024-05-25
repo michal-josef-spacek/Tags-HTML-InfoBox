@@ -4,7 +4,7 @@ use warnings;
 use English;
 use Error::Pure::Utils qw(clean);
 use Tags::HTML::InfoBox;
-use Tags::Output::Raw;
+use Tags::Output::Structure;
 use Test::MockObject;
 use Test::More 'tests' => 8;
 use Test::NoWarnings;
@@ -15,7 +15,7 @@ isa_ok($obj, 'Tags::HTML::InfoBox');
 
 # Test.
 $obj = Tags::HTML::InfoBox->new(
-	'tags' => Tags::Output::Raw->new,
+	'tags' => Tags::Output::Structure->new,
 );
 isa_ok($obj, 'Tags::HTML::InfoBox');
 

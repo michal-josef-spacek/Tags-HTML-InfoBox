@@ -27,6 +27,7 @@ resources 'homepage' => 'https://github.com/michal-josef-spacek/Tags-HTML-InfoBo
 resources 'repository' => 'git://github.com/michal-josef-spacek/Tags-HTML-InfoBox';
 test_requires 'English' => 0;
 test_requires 'Error::Pure::Utils' => 0;
+test_requires 'Tags::Output::Structure' => 0;
 test_requires 'Test::MockObject' => 0;
 test_requires 'Test::More' => 0;
 test_requires 'Test::NoWarnings' => 0;
