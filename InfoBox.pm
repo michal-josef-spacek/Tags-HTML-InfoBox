@@ -67,11 +67,11 @@ sub _process {
 		$self->{'tags'}->put(
 			['b', 'tr'],
 		);
-		if ($item->icon_utf8) {
+		if ($item->icon_char) {
 			$self->{'tags'}->put(
 				['b', 'td'],
 				['a', 'class', 'icon'],
-				['d', $item->icon_utf8],
+				['d', $item->icon_char],
 				['e', 'td'],
 			);
 		# TODO icon_url
