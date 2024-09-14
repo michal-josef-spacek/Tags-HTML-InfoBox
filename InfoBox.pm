@@ -110,6 +110,10 @@ sub _process {
 sub _process_css {
 	my $self = shift;
 
+	if (! exists $self->{'_infobox'}) {
+		return;
+	}
+
 	$self->{'css'}->put(
 		['s', '.'.$self->{'css_box'}],
 		['d', 'background-color', '#32a4a8'],
