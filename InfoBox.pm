@@ -74,7 +74,7 @@ sub _process {
 				['d', $item->icon_char],
 				['e', 'td'],
 			);
-		} else {
+		} elsif ($item->icon_url) {
 			$self->{'tags'}->put(
 				['b', 'td'],
 				['b', 'img'],
