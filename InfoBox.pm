@@ -74,10 +74,12 @@ sub _process {
 				['d', $item->icon_char],
 				['e', 'td'],
 			);
-		# TODO icon_url
 		} else {
 			$self->{'tags'}->put(
 				['b', 'td'],
+				['b', 'img'],
+				['a', 'src', $item->icon_url],
+				['e', 'img'],
 				['e', 'td'],
 			);
 		}
