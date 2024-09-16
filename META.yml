@@ -10,7 +10,7 @@ build_requires:
   Test::MockObject: 0
   Test::More: 0
   Test::NoWarnings: 0
-  Test::Shared::Fixture::Data::InfoBox::Street: 0
+  Test::Shared::Fixture::Data::InfoBox::Street: 0.02
 configure_requires:
   ExtUtils::MakeMaker: 6.36
 distribution_type: module

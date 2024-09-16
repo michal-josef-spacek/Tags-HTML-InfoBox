@@ -31,7 +31,7 @@ test_requires 'Tags::Output::Structure' => 0;
 test_requires 'Test::MockObject' => 0;
 test_requires 'Test::More' => 0;
 test_requires 'Test::NoWarnings' => 0;
-test_requires 'Test::Shared::Fixture::Data::InfoBox::Street' => 0;
+test_requires 'Test::Shared::Fixture::Data::InfoBox::Street' => 0.02;
 tests_recursive;
 version '0.01';
 

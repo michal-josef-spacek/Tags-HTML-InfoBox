@@ -90,12 +90,12 @@ sub _process {
 
 				['a', 'lang', $self->text->lang],
 			) : (),
-			defined $item->url ? (
+			defined $item->uri ? (
 				['b', 'a'],
-				['a', 'href', $item->url],
+				['a', 'href', $item->uri],
 			) : (),
 			['d', $item->text->text],
-			defined $item->url ? (
+			defined $item->uri ? (
 				['e', 'a'],
 			) : (),
 			['e', 'td'],
