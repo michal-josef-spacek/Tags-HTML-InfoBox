@@ -16,11 +16,11 @@ sub new {
 
 	# Create object.
 	my ($object_params_ar, $other_params_ar) = split_params(
-		['css_box', 'lang'], @params);
+		['css_class', 'lang'], @params);
 	my $self = $class->SUPER::new(@{$other_params_ar});
 
 	# CSS style for info box.
-	$self->{'css_box'} = 'info-box';
+	$self->{'css_class'} = 'info-box';
 
 	$self->{'lang'} = undef;
 
@@ -61,7 +61,7 @@ sub _process {
 
 	$self->{'tags'}->put(
 		['b', 'table'],
-		['a', 'class', $self->{'css_box'}],
+		['a', 'class', $self->{'css_class'}],
 	);
 	foreach my $item (@{$self->{'_infobox'}->items}) {
 		$self->{'tags'}->put(
@@ -115,16 +115,16 @@ sub _process_css {
 	}
 
 	$self->{'css'}->put(
-		['s', '.'.$self->{'css_box'}],
+		['s', '.'.$self->{'css_class'}],
 		['d', 'background-color', '#32a4a8'],
 		['d', 'padding', '1em'],
 		['e'],
 
-		['s', '.'.$self->{'css_box'}.' .icon'],
+		['s', '.'.$self->{'css_class'}.' .icon'],
 		['d', 'text-align', 'center'],
 		['e'],
 
-		['s', '.'.$self->{'css_box'}.' a'],
+		['s', '.'.$self->{'css_class'}.' a'],
 		['d', 'text-decoration', 'none'],
 		['e'],
 	);
