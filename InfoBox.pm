@@ -82,6 +82,11 @@ sub _process {
 				['e', 'img'],
 				['e', 'td'],
 			);
+		} else {
+			$self->{'tags'}->put(
+				['b', 'td'],
+				['e', 'td'],
+			);
 		}
 		$self->{'tags'}->put(
 			['b', 'td'],
