@@ -71,6 +71,7 @@ sub _process {
 	foreach my $item (@{$self->{'_infobox'}->items}) {
 		$self->{'tags'}->put(
 			['b', 'tr'],
+			['b', 'td'],
 		);
 		if ($item->can('icon') && defined $item->icon
 			&& (defined $item->icon->char
@@ -80,26 +81,19 @@ sub _process {
 			$self->{'_tags_icon'}->process;
 		} elsif ($item->can('icon_char') && $item->icon_char) {
 			$self->{'tags'}->put(
-				['b', 'td'],
 				['a', 'class', 'icon'],
 				['d', $item->icon_char],
-				['e', 'td'],
 			);
 		} elsif ($item->can('icon_url') && $item->icon_url) {
 			$self->{'tags'}->put(
-				['b', 'td'],
 				['b', 'img'],
 				['a', 'src', $item->icon_url],
 				['e', 'img'],
-				['e', 'td'],
-			);
-		} else {
-			$self->{'tags'}->put(
-				['b', 'td'],
-				['e', 'td'],
 			);
 		}
 		$self->{'tags'}->put(
+			['e', 'td'],
+
 			['b', 'td'],
 			(defined $self->{'lang'} && defined $item->text->lang
 				&& $item->text->lang ne $self->{'lang'}) ? (
