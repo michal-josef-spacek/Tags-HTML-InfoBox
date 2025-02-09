@@ -86,6 +86,11 @@ METHODS
 
 ERRORS
      new():
+             From Mo::utils::CSS::check_css_class():
+                     Parameter '%s' has bad CSS class name.
+                             Value: %s
+                     Parameter '%s' has bad CSS class name (number on begin).
+                             Value: %s
              From Tags::HTML::new():
                      Parameter 'css' must be a 'CSS::Struct::Output::*' class.
                      Parameter 'tags' must be a 'Tags::Output::*' class.
@@ -174,7 +179,7 @@ EXAMPLE
      # }
 
 DEPENDENCIES
-    Class::Utils, Error::Pure, Scalar::Util, Tags::HTML.
+    Class::Utils, Error::Pure, Mo::utils::CSS, Scalar::Util, Tags::HTML.
 
 REPOSITORY
     <https://github.com/michal-josef-spacek/Tags-HTML-InfoBox>
