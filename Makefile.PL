@@ -22,6 +22,7 @@ requires 'Error::Pure' => 0.07;
 requires 'Mo::utils::CSS' => 0.02;
 requires 'Scalar::Util' => 0;
 requires 'Tags::HTML' => 0.08;
+requires 'Tags::HTML::Icon' => 0;
 requires 'perl' => '5.8.0';
 resources 'bugtracker' => 'https://github.com/michal-josef-spacek/Tags-HTML-InfoBox/issues';
 resources 'homepage' => 'https://github.com/michal-josef-spacek/Tags-HTML-InfoBox';

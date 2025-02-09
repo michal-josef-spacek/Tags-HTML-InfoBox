@@ -33,6 +33,7 @@ requires:
   Mo::utils::CSS: 0.02
   Scalar::Util: 0
   Tags::HTML: 0.08
+  Tags::HTML::Icon: 0
   perl: 5.8.0
 resources:
   bugtracker: https://github.com/michal-josef-spacek/Tags-HTML-InfoBox/issues

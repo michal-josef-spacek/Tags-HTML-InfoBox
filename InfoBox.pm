@@ -8,6 +8,7 @@ use Class::Utils qw(set_params split_params);
 use Error::Pure qw(err);
 use Mo::utils::CSS 0.02 qw(check_css_class);
 use Scalar::Util qw(blessed);
+use Tags::HTML::Icon;
 
 our $VERSION = 0.01;
 
@@ -38,6 +39,7 @@ sub _cleanup {
 	my $self = shift;
 
 	delete $self->{'_infobox'};
+	delete $self->{'_tags_icon'};
 
 	return;
 }
@@ -70,7 +72,13 @@ sub _process {
 		$self->{'tags'}->put(
 			['b', 'tr'],
 		);
-		if ($item->can('icon_char') && $item->icon_char) {
+		if ($item->can('icon') && defined $item->icon
+			&& (defined $item->icon->char
+			|| defined $item->icon->url)) {
+
+			$self->{'_tags_icon'}->init($item->icon);
+			$self->{'_tags_icon'}->process;
+		} elsif ($item->can('icon_char') && $item->icon_char) {
 			$self->{'tags'}->put(
 				['b', 'td'],
 				['a', 'class', 'icon'],
@@ -138,6 +146,7 @@ sub _process_css {
 		['d', 'text-decoration', 'none'],
 		['e'],
 	);
+	$self->{'_tags_icon'}->process_css;
 
 	return;
 }
@@ -154,6 +163,11 @@ sub _set_infobox {
 	}
 
 	$self->{'_infobox'} = $infobox;
+
+	$self->{'_tags_icon'} = Tags::HTML::Icon->new(
+		'css' => $self->{'css'},
+		'tags' => $self->{'tags'},
+	);
 
 	return;
 }
@@ -372,7 +386,8 @@ L<Class::Utils>,
 L<Error::Pure>,
 L<Mo::utils::CSS>,
 L<Scalar::Util>,
-L<Tags::HTML>.
+L<Tags::HTML>,
+L<Tags::HTML::Icon>.
 
 =head1 REPOSITORY
 

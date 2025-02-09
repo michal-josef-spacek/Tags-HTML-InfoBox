@@ -182,7 +182,8 @@ EXAMPLE
      # }
 
 DEPENDENCIES
-    Class::Utils, Error::Pure, Mo::utils::CSS, Scalar::Util, Tags::HTML.
+    Class::Utils, Error::Pure, Mo::utils::CSS, Scalar::Util, Tags::HTML,
+    Tags::HTML::Icon.
 
 REPOSITORY
     <https://github.com/michal-josef-spacek/Tags-HTML-InfoBox>
