@@ -67,14 +67,14 @@ sub _process {
 		$self->{'tags'}->put(
 			['b', 'tr'],
 		);
-		if ($item->icon_char) {
+		if ($item->can('icon_char') && $item->icon_char) {
 			$self->{'tags'}->put(
 				['b', 'td'],
 				['a', 'class', 'icon'],
 				['d', $item->icon_char],
 				['e', 'td'],
 			);
-		} elsif ($item->icon_url) {
+		} elsif ($item->can('icon_url') && $item->icon_url) {
 			$self->{'tags'}->put(
 				['b', 'td'],
 				['b', 'img'],
