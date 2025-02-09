@@ -96,7 +96,10 @@ ERRORS
                      Parameter 'tags' must be a 'Tags::Output::*' class.
 
      init():
-             Footer object must be a 'Data::InfoBox' instance.
+             Info box object must be a instance of 'Data::InfoBox'.
+
+     prepare():
+             Info box object must be a instance of 'Data::InfoBox'.
 
      process():
              From Tags::HTML::process():

@@ -19,22 +19,22 @@ $obj = Tags::HTML::InfoBox->new;
 eval {
 	$obj->prepare('bad');
 };
-is($EVAL_ERROR, "Data object for infobox is not valid.\n",
-	"Data object for infobox is not valid.");
+is($EVAL_ERROR, "Info box object must be a instance of 'Data::InfoBox'.\n",
+	"Info box object must be a instance of 'Data::InfoBox' (bad).");
 clean();
 
 # Test.
 $obj = Tags::HTML::InfoBox->new;
 my $bad_object = Test::MockObject->new;
 eval {
-	$obj->init($bad_object);
+	$obj->prepare($bad_object);
 };
-is($EVAL_ERROR, "Data object for infobox is not valid.\n",
-	"Data object for infobox is not valid.");
+is($EVAL_ERROR, "Info box object must be a instance of 'Data::InfoBox'.\n",
+	"Info box object must be a instance of 'Data::InfoBox' (prepare).");
 clean();
 
 # Test.
 $obj = Tags::HTML::InfoBox->new;
 my $info_box = Test::Shared::Fixture::Data::InfoBox::Street->new;
-$ret = $obj->init($info_box);
-is($ret, undef, 'Init returns undef.');
+$ret = $obj->prepare($info_box);
+is($ret, undef, 'Prepare returns undef.');

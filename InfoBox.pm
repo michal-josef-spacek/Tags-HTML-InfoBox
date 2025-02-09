@@ -150,7 +150,7 @@ sub _set_infobox {
 	}
 
 	if (! blessed($infobox) || ! $infobox->isa('Data::InfoBox')) {
-		err 'Data object for infobox is not valid.';
+		err "Info box object must be a instance of 'Data::InfoBox'.";
 	}
 
 	$self->{'_infobox'} = $infobox;
@@ -278,7 +278,10 @@ Returns undef.
                  Parameter 'tags' must be a 'Tags::Output::*' class.
 
  init():
-         Footer object must be a 'Data::InfoBox' instance.
+         Info box object must be a instance of 'Data::InfoBox'.
+
+ prepare():
+         Info box object must be a instance of 'Data::InfoBox'.
 
  process():
          From Tags::HTML::process():

@@ -19,8 +19,8 @@ $obj = Tags::HTML::InfoBox->new;
 eval {
 	$obj->init('bad');
 };
-is($EVAL_ERROR, "Data object for infobox is not valid.\n",
-	"Data object for infobox is not valid.");
+is($EVAL_ERROR, "Info box object must be a instance of 'Data::InfoBox'.\n",
+	"Info box object must be a instance of 'Data::InfoBox' (bad).");
 clean();
 
 # Test.
@@ -29,8 +29,8 @@ my $bad_object = Test::MockObject->new;
 eval {
 	$obj->init($bad_object);
 };
-is($EVAL_ERROR, "Data object for infobox is not valid.\n",
-	"Data object for infobox is not valid.");
+is($EVAL_ERROR, "Info box object must be a instance of 'Data::InfoBox'.\n",
+	"Info box object must be a instance of 'Data::InfoBox' (other object).");
 clean();
 
 # Test.
