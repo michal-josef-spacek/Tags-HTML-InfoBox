@@ -23,6 +23,7 @@ meta-spec:
 name: Tags-HTML-InfoBox
 no_index:
   directory:
+    - examples
     - inc
     - t
     - xt
