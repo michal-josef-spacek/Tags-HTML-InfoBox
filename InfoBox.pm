@@ -155,6 +155,9 @@ sub _set_infobox {
 	if (! blessed($infobox) || ! $infobox->isa('Data::InfoBox')) {
 		err "Info box object must be a instance of 'Data::InfoBox'.";
 	}
+	if (! $infobox->VERSION('0.03')) {
+		err "Info box object must have a minimal version >= 0.03.";
+	}
 
 	$self->{'_infobox'} = $infobox;
 
