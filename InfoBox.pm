@@ -73,23 +73,9 @@ sub _process {
 			['b', 'tr'],
 			['b', 'td'],
 		);
-		if ($item->can('icon') && defined $item->icon
-			&& (defined $item->icon->char
-			|| defined $item->icon->url)) {
-
+		if (defined $item->icon) {
 			$self->{'_tags_icon'}->init($item->icon);
 			$self->{'_tags_icon'}->process;
-		} elsif ($item->can('icon_char') && $item->icon_char) {
-			$self->{'tags'}->put(
-				['a', 'class', 'icon'],
-				['d', $item->icon_char],
-			);
-		} elsif ($item->can('icon_url') && $item->icon_url) {
-			$self->{'tags'}->put(
-				['b', 'img'],
-				['a', 'src', $item->icon_url],
-				['e', 'img'],
-			);
 		}
 		$self->{'tags'}->put(
 			['e', 'td'],
@@ -155,8 +141,8 @@ sub _set_infobox {
 	if (! blessed($infobox) || ! $infobox->isa('Data::InfoBox')) {
 		err "Info box object must be a instance of 'Data::InfoBox'.";
 	}
-	if (! $infobox->VERSION('0.03')) {
-		err "Info box object must have a minimal version >= 0.03.";
+	if (! $infobox->VERSION('0.04')) {
+		err "Info box object must have a minimal version >= 0.04.";
 	}
 
 	$self->{'_infobox'} = $infobox;
