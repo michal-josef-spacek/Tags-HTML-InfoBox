@@ -1,6 +1,5 @@
 TODO
 ====
-1. Support for icons from url.
 3. Add tests.
 5.
 
@@ -11,3 +10,6 @@ OK [20250209] skim
 
 4. Add support of use of Tags::HTML::Icon.
 OK [20250209] skim
+
+1. Support for icons from url.
+OK [20250211] skim
